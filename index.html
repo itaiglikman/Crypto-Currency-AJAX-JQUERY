@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitcoint Kingdom</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/png" href="/assets/images/favicon.png" />
+
+    <!-- fontawesome link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- bootstrap link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+    <!-- css links -->
+    <link rel="stylesheet" href="/styles/general.css">
+    <link rel="stylesheet" href="/styles/header.css">
+    <link rel="stylesheet" href="/styles/main.css">
+
+    <!-- jquery link -->
+    <script src="jquery-3.7.0.js"></script>
+
+    <!-- bootstrap script link -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+    <script defer src="main.js"></script>
+
+    <!-- jquery charts script source: -->
+    <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+    <script src="https://cdn.canvasjs.com/jquery.canvasjs.min.js"></script>
+
+</head>
+
+<body onload="hideLoader()">
+
+    <!-- onload -->
+    <div class="page-loader">
+        <div class="spinner"></div>
+        <div class="txt">Loading...</div>
+    </div>
+
+    <header>
+        <h1>ALL ABOUT BITCOIN</h1>
+        <div class="barContainer">
+            <!-- links -->
+            <ul class="nav nav-pills nav-ul">
+                <li class="nav-item">
+                    <a id="homeLink" class="nav-link active" data-section="homeSection">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a id="reportsLink" class="nav-link " data-section="reportsSection">Live Reports</a>
+                </li>
+                <li class="nav-item">
+                    <a id="aboutLink" class="nav-link" data-section="aboutSection">About</a>
+                </li>
+            </ul>
+
+            <!-- search -->
+            <div class="search-container ">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="search coin by symbol" id="searchBox">
+                    <button class="btn btn-outline-secondary" type="button" id="searchBtn">
+                        <i class="fa-solid fa-magnifying-glass-dollar" title="search"></i>
+                    </button>
+                    <button class="btn btn-outline-secondary" type="button" id="clearSearchBtn">
+                        <i class="fa-solid fa-trash-can" title="clear"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <!-- home section -->
+        <section id="homeSection">
+
+            <!-- my list -->
+            <button class="btn btn-primary" id="myListBtn" type="button">
+                <div id="listContent">
+                    <span>My List</span>
+                    <span id="myListNotification">0</span>
+                </div>
+            </button>
+
+            <!-- modal -->
+            <dialog class="checked-modal" id="modal">
+                <div id="dialogBody"></div>
+                <button id="closeModalBtn" title="">DONE!</button>
+            </dialog>
+
+            <!-- coins container -->
+            <div id="coinsContainer"></div>
+
+        </section>
+
+        <!-- reports section -->
+        <section id="reportsSection">
+            
+            <div id="chartContainer">
+                <dialog class="checked-modal" id="reportsModal">
+                    <span>Live Reports need at least one coin in your list...</span>
+                    <button id="closeReportsModalBtn" title=""><a id="homeLinkFromReports" class="nav-link"
+                            data-section="homeSection">Home</a></button>
+                </dialog>
+            </div>
+
+        </section>
+
+        <!-- about section -->
+        <section id="aboutSection">
+
+            <div class="aboutContainer">
+                <div class="aboutDiv">
+                    <div class="aboutProject">
+                        <h2>About Us</h2>
+                        <p>
+                            <b>All About Bitcoin</b> gives the best experience and information to all its users!<br />
+                            It was developed by the programmer Itai Glikman as a second project in a Fullstack Web
+                            Developers Course.
+                        </p>
+                        <h3>Our Technologies:</h3>
+                        <ul>
+                            <li>HTML + CSS</li>
+                            <li>New HTML5 tags</li>
+                            <li>CSS3 media queries and advanced selectors</li>
+                            <li>Dynamic page layouts</li>
+                            <li>Bootstrap & flex</li>
+                            <li>JavaScript</li>
+                            <li>Objects</li>
+                            <li>Callbacks, Promises, Async Await</li>
+                            <li>jQuery</li>
+                            <li>Single Page Application foundations</li>
+                            <li>Events</li>
+                            <li>Ajax (RESTful API)</li>
+                            <li>External API’s</li>
+                            <li>Documentation</li>
+                        </ul>
+                        <p>
+                            The users get many functions to work with by the great live information from reliable
+                            APIs.</br>
+                            With our frontend tech the users can get wide and specific information, complicated
+                            analytics in
+                            real time!
+                            We expose a massive storage of deferent coins (more the 9,000 coins),</br>
+                            each coin contains extra unique information which can be analyzed later in our real time
+                            graphs...<br />
+                            With our sophisticated search system, our clients can find easily their favorite coin and
+                            add it
+                            to their own and private coins list!<br />
+                            For best coins study and fully understanding we believe one should focus on 5 coins
+                            max...<br />
+                            In our Live Reports section, regards to high-tech products, is possible to learn deeply
+                            about
+                            the chosen coins, their behavior in real time, comparing to
+                            other coins and understand what is best for you!
+                        </p>
+                    </div>
+                    <div class="aboutMe">
+                        <h3>Who Am I?</h3>
+                        <p>
+                            My name is Itai Glikman, 24 years old, and I live in Jerusalem since 2022.<br />
+                            I'm passionate about travels, hiking, nature and sports.<br />
+                            I'm a student in John Bryce Academy in Tel Aviv, participating in a Fullstack Web
+                            Course.<br />
+                            My goal is to get into the web programming industry, work hard, learn as much as possible
+                            and
+                            become the best I can in what I do.<br />
+                        </p>
+                    </div>
+                    <hr />
+
+                </div>
+
+                <div class="imgDiv">
+                    <img src="assets/images/my-pic.jpeg" class="d-block w-30" id="myPic">
+                </div>
+            </div>
+        </section>
+
+    </main>
+</body>
+
+</html>

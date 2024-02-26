@@ -1,0 +1,36 @@
+header {
+    height: 100%;
+    padding: 1%;
+}
+
+header>h1 {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.barContainer {
+    display: flex;
+    height: fit-content;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: .3em;
+}
+
+.nav-ul {
+    max-width: fit-content;
+}
+
+.nav-link {
+    cursor: pointer;
+}
+
+.search-container {
+    width: 40%;
+    min-width: 250px;
+}
+
+.searchBtn {
+    border-radius: 20px;
+}
